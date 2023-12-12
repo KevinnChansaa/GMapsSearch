@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map fragment container using FrameLayout -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <!-- This is where the map fragment will be placed -->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            tools:context=".MainActivity" />
+
+    </FrameLayout>
+
+    <!-- EditText components and SearchView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"> <!-- Set white background here -->
+
+        <EditText
+            android:id="@+id/Latitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Latitude" />
+
+        <EditText
+            android:id="@+id/Longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Longitude" />
+
+        <!-- SearchView for location search -->
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search Location"
+            android:iconifiedByDefault="false" />
+
+        <!-- Save button -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Save"
+            android:background="#3498db"
+            android:textColor="#ffffff"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
